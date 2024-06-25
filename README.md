@@ -114,14 +114,21 @@ vim /etc/resolv.conf
     samba-tool domain provision
 
 будут вылезать подсказки для настройки домена, нужно ответить на них вот так:
+
 Realm [AU.TEAM]: //жмем Enter
+
 Domain [AU]: //жмем Enter
+
 Server Role (dc, member, standalone) [dc]: //жмем Enter
+
 DNS backend (SAMBA_INTERNAL, BIND9_FLATFILE, BIND9_DLZ, NONE) [SAMBA_INTERNAL]: //жмем Enter
+
 DNS forwarder IP address (write 'none' to disable forwarding) [94.232.137.104]: //если в квадратных скобках не указан 94.232.137.104, то пишем 94.232.137.104 и жмем Enter, если уже указан, то просто жмем Enter.
 
 Administrator password: //Вводим пароль P@ssw0rd
+
 Retype password: //Повторяем пароль P@ssw0rd
+
 13. systemctl enable --now samba
 14. reboot
 15. cp /var/lib/samba/private/krb5.conf /etc/krb5.conf
@@ -130,12 +137,12 @@ Retype password: //Повторяем пароль P@ssw0rd
     domain au.team
     nameserver 10.10.10.100
     
-    ![6](https://github.com/ErmKaterina/AOC/assets/109353253/a0d0cbff-720c-4310-b2b8-e53de23ba330)
+![6](https://github.com/ErmKaterina/AOC/assets/109353253/a0d0cbff-720c-4310-b2b8-e53de23ba330)
     
     17. systemctl restart network
 18. проверяем (на всякий случай):
     1. samba-tool domain info 10.10.10.100
-    ![7](https://github.com/ErmKaterina/AOC/assets/109353253/c9665596-3176-489c-8310-577a529d9677)
+![7](https://github.com/ErmKaterina/AOC/assets/109353253/c9665596-3176-489c-8310-577a529d9677)
     
     kinit administrator
 вводим пароль P@ssw0rd
