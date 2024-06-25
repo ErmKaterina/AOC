@@ -1,5 +1,9 @@
 https://amirkhans.notion.site/1ec7c3d805674e459a7b202d2d9178de
 
+https://www.notion.so/s-n-2222/cd184760b0e54fdf832ca2ea2364a70e
+
+
+
 # AOC
 - RTR-L
     1. hostnamectl set-hostname rtr-l.au.team
