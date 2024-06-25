@@ -100,18 +100,18 @@
 
 reboot
 vim /etc/resolv.conf
-в начало:
-nameserver 94.232.137.104
+1 в начало:
+    nameserver 94.232.137.104
 
-apt-get update && apt-get install task-samba-dc krb5-kdc -y
+    apt-get update && apt-get install task-samba-dc krb5-kdc -y
 
-systemctl stop smb nmb krb5kdc slapd bind dnsmasq
-systemctl disable smb nmb krb5kdc slapd bind dnsmasq
-rm -f /etc/samba/smb.conf
-rm -rf /var/lib/samba
-rm -rf /var/cache/samba
-mkdir -p /var/lib/samba/sysvol
-samba-tool domain provision
+    systemctl stop smb nmb krb5kdc slapd bind dnsmasq
+    systemctl disable smb nmb krb5kdc slapd bind dnsmasq
+    rm -f /etc/samba/smb.conf
+    rm -rf /var/lib/samba
+    rm -rf /var/cache/samba
+    mkdir -p /var/lib/samba/sysvol
+    samba-tool domain provision
 
 будут вылезать подсказки для настройки домена, нужно ответить на них вот так:
 Realm [AU.TEAM]: //жмем Enter
