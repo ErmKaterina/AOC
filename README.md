@@ -96,7 +96,7 @@
         4. DISABLED=no
         5. **вот так и больше ничего**:
 
-        ![5](https://github.com/ErmKaterina/AOC/assets/109353253/83376222-a554-41f2-adeb-817c9dcd19af)
+![5](https://github.com/ErmKaterina/AOC/assets/109353253/83376222-a554-41f2-adeb-817c9dcd19af)
 
 reboot
 vim /etc/resolv.conf
