@@ -102,7 +102,9 @@ reboot
 vim /etc/resolv.conf
 в начало:
 nameserver 94.232.137.104
+
 apt-get update && apt-get install task-samba-dc krb5-kdc -y
+
 systemctl stop smb nmb krb5kdc slapd bind dnsmasq
 systemctl disable smb nmb krb5kdc slapd bind dnsmasq
 rm -f /etc/samba/smb.conf
@@ -110,12 +112,14 @@ rm -rf /var/lib/samba
 rm -rf /var/cache/samba
 mkdir -p /var/lib/samba/sysvol
 samba-tool domain provision
+
 будут вылезать подсказки для настройки домена, нужно ответить на них вот так:
 Realm [AU.TEAM]: //жмем Enter
 Domain [AU]: //жмем Enter
 Server Role (dc, member, standalone) [dc]: //жмем Enter
 DNS backend (SAMBA_INTERNAL, BIND9_FLATFILE, BIND9_DLZ, NONE) [SAMBA_INTERNAL]: //жмем Enter
 DNS forwarder IP address (write 'none' to disable forwarding) [94.232.137.104]: //если в квадратных скобках не указан 94.232.137.104, то пишем 94.232.137.104 и жмем Enter, если уже указан, то просто жмем Enter.
+
 Administrator password: //Вводим пароль P@ssw0rd
 Retype password: //Повторяем пароль P@ssw0rd
 13. systemctl enable --now samba
@@ -125,15 +129,19 @@ Retype password: //Повторяем пароль P@ssw0rd
     1. должно быть указано только:
     domain au.team
     nameserver 10.10.10.100
+    
     ![6](https://github.com/ErmKaterina/AOC/assets/109353253/a0d0cbff-720c-4310-b2b8-e53de23ba330)
+    
     17. systemctl restart network
 18. проверяем (на всякий случай):
     1. samba-tool domain info 10.10.10.100
     ![7](https://github.com/ErmKaterina/AOC/assets/109353253/c9665596-3176-489c-8310-577a529d9677)
+    
     kinit administrator
 вводим пароль P@ssw0rd
 klist
 ![8](https://github.com/ErmKaterina/AOC/assets/109353253/b9908d85-b2a6-4c8b-9ba2-a39e04c75de6)
+
 19. for i in {1..15}; do samba-tool user create user$i.userl P@ssw0rd; done;
 20. for i in {1..5}; do samba-tool user create user$i.admin P@ssw0rd; done;
 21. samba-tool group add left
