@@ -147,31 +147,34 @@ Retype password: //Повторяем пароль P@ssw0rd
 ![7](https://github.com/ErmKaterina/AOC/assets/109353253/c9665596-3176-489c-8310-577a529d9677)
     
     kinit administrator
+    
 вводим пароль P@ssw0rd
+
 klist
+
 ![8](https://github.com/ErmKaterina/AOC/assets/109353253/b9908d85-b2a6-4c8b-9ba2-a39e04c75de6)
 
-19. for i in {1..15}; do samba-tool user create user$i.userl P@ssw0rd; done;
-20. for i in {1..5}; do samba-tool user create user$i.admin P@ssw0rd; done;
-21. samba-tool group add left
-22. samba-tool group add admin
-23. for i in {1..15}; do samba-tool group addmembers left user$i.userl; done;
-24. for i in {1..5}; do samba-tool group addmembers admin user$i.admin; done;
-25. samba-tool dns zonecreate 10.10.10.100 10.10.10.in-addr.arpa -U administrator
+20. for i in {1..15}; do samba-tool user create user$i.userl P@ssw0rd; done;
+21. for i in {1..5}; do samba-tool user create user$i.admin P@ssw0rd; done;
+22. samba-tool group add left
+23. samba-tool group add admin
+24. for i in {1..15}; do samba-tool group addmembers left user$i.userl; done;
+25. for i in {1..5}; do samba-tool group addmembers admin user$i.admin; done;
+26. samba-tool dns zonecreate 10.10.10.100 10.10.10.in-addr.arpa -U administrator
     1. пароль P@ssw0rd
-26. samba-tool dns zonecreate 10.10.10.100 20.20.20.in-addr.arpa -U administrator
+27. samba-tool dns zonecreate 10.10.10.100 20.20.20.in-addr.arpa -U administrator
     1. пароль P@ssw0rd
-27. samba-tool dns add 10.10.10.100 au.team admin-pc A 20.20.20.150 -U administrator
+28. samba-tool dns add 10.10.10.100 au.team admin-pc A 20.20.20.150 -U administrator
     1. пароль P@ssw0rd
-28. samba-tool dns add 10.10.10.100 au.team rtr-l A 20.20.20.1 -U administrator
+29. samba-tool dns add 10.10.10.100 au.team rtr-l A 20.20.20.1 -U administrator
     1. пароль P@ssw0rd
-29. samba-tool dns add 10.10.10.100 au.team rtr-l A 10.10.10.1 -U administrator
+30. samba-tool dns add 10.10.10.100 au.team rtr-l A 10.10.10.1 -U administrator
     1. пароль P@ssw0rd
-30. samba-tool dns add 10.10.10.100 10.10.10.in-addr.arpa 1 PTR rtr-l -U administrator
+31. samba-tool dns add 10.10.10.100 10.10.10.in-addr.arpa 1 PTR rtr-l -U administrator
     1. пароль P@ssw0rd
-31. samba-tool dns add 10.10.10.100 10.10.10.in-addr.arpa 100 PTR l-srv -U administrator
+32. samba-tool dns add 10.10.10.100 10.10.10.in-addr.arpa 100 PTR l-srv -U administrator
     1. пароль P@ssw0rd
-32. samba-tool dns add 10.10.10.100 20.20.20.in-addr.arpa 150 PTR admin-pc -U administrator
+33. samba-tool dns add 10.10.10.100 20.20.20.in-addr.arpa 150 PTR admin-pc -U administrator
     1. пароль P@ssw0rd
-33. samba-tool dns add 10.10.10.100 20.20.20.in-addr.arpa 1 PTR rtr-l -U administrator
+34. samba-tool dns add 10.10.10.100 20.20.20.in-addr.arpa 1 PTR rtr-l -U administrator
     1. пароль P@ssw0rd
